@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: rgb(226, 237, 244);
+  justify-content: center;
+  align-items: center;
+}
+
+.action {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.user {
+  width: 64px;
+  height: 64px;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 66px;
+  left: 5px;
+  min-width: 240px;
+  background-color: #fff;
+  box-shadow: 4px 6px 12px -2px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.action:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(149, 149, 149);
+  transition: 0.2s;
+}
+
+.dropdown a:first-child {
+  border-left: 5px solid rgb(0, 150, 0);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.dropdown a:nth-child(2){
+  border-left: 5px solid rgb(255, 215, 0);
+}
+
+.dropdown a:nth-child(3){
+  border-left: 5px solid rgb(240, 0, 0);
+}
+
+.dropdown a:last-child {
+  border-left: 5px solid rgb(238, 249, 249);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.dropdown a:hover {
+  color: black;
+  background-color: rgb(243, 243, 243);
+}
+
+.dropdown a img {
+  max-width: 14px;
+  margin-right: 12px;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.dropdown a:hover img {
+  opacity: 1;
+}
+
+.container {
+  padding: 20px;
+  max-width: 700px;
+  border: 1px solid;
+  text-align: left;
+  background-color: rgb(248, 248, 248);
+}
+
+.container h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(60, 60, 60);
+  margin-bottom: 15px;
+}
+
+.container p {
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin: 40px 0;
+  gap: 10px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn-container p {
+  font-size: 13px;
+  color: rgb(57, 57, 57);
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.gray-btn {
+  height: 38px;
+  width: 200px;
+  background: rgb(51,51,51);
+  background: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(43,43,43,1) 35%, rgba(36,36,36,1) 100%);
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gray-btn strong {
+  display: block;
+  font-size: 12px;
+}
+.gray-btn:hover {
+  opacity: 0.9;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 22px;
+  color: rgb(52, 52, 52);
+  transition: 0.2s;
+}
+
+.footer a:hover {
+  color: rgb(111, 111, 111);
+}

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: rgb(132, 47, 96);
+  padding: 5px 20px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.menu > li {
+  top: 5px;
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+  background-color: rgb(215, 70, 155);
+}
+
+.hormenu, .vermenu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: rgb(215, 70, 155);
+  z-index: 1;
+}
+
+.hormenu li, .vermenu li {
+  position: relative;
+}
+
+.hormenu a, .vermenu a {
+  padding: 10px 15px;
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.hormenu a:hover, .vermenu a:hover {
+  background-color: rgb(255, 161, 216);
+  color: #000;
+}
+
+.dropdown:hover > .hormenu {
+  display: flex;
+}
+
+.dropdown:hover > .vermenu {
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.animbox {
+  width: 100px;
+  height: 100px;
+  background: rgb(255, 0, 89);;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  left: 50px;
+  animation: moveBox 3s infinite alternate, 
+  changeColor 5s infinite alternate, scaleUp 4s infinite alternate;
+}
+
+@keyframes moveBox {
+  from { left: 55px; }
+  to { left: 180px; }
+}
+
+@keyframes changeColor {
+  from { background: rgb(255, 0, 80); }
+  to { background: rgb(80, 0, 255); }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(1); }
+  to { transform: scale(2); }
+}
+
+.popup {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  width: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 225, 245);
+  border-radius: 6px;
+  padding: 20px 20px;
+  transition: opacity 0.4s ease;
+}
+
+.show {
+  opacity: 1;
+}
+
+.popcontent {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popcontent h2 {
+  color: rgb(29, 18, 21);
+}
+
+.popcontent a {
+  color: rgb(54, 41, 45);
+}
+
+.popup img {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  margin-right: 15px;
+  margin-left: -5px;
+}
+
+.popup button {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 15px;
+  background: rgb(255, 150, 205);
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.popup button:hover {
+  background: rgb(255, 105, 165);
+  transform: scale(1.02);
+}

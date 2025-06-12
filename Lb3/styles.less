@@ -1,0 +1,109 @@
+@primary-color: #2d5e8b;
+@secondary-color: #ffffff;
+@text-color: #333333;
+@base-font-size: 16px;
+@base-padding: 20px;
+
+.text-color(@color) {
+  color: @color;
+}
+
+.red {
+  color: red;
+}
+
+.h(@height) {
+  height: @height;
+}
+
+.w(@width) {
+  width: @width;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  font-size: @base-font-size;
+  color: @text-color;
+  margin: 0;
+}
+
+header, main, footer {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: @base-padding;
+}
+
+header {
+  background-color: @primary-color;
+  .text-color(@secondary-color);
+  min-width: 200px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  li {
+    margin-right: 20px;
+    a {
+      .text-color(@secondary-color);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+main {
+  min-width: 600px;
+  .column {
+    padding: @base-padding;
+    background-color: #f0f0f0;
+    margin-bottom: @base-padding;
+    margin-right: 1%;
+    &.news h2 {
+      .red;
+    }
+    &.faculties {
+      .h(200px);
+    }
+    &.contacts {
+      .h(200px);
+    }
+  }
+}
+
+footer {
+  background-color: @primary-color;
+  .text-color(@secondary-color);
+  min-width: 200px;
+  text-align: center;
+}
+
+// Column Drop
+@media (max-width: 799px) {
+  header, main {
+    .h(calc(100% - 200px));
+  }
+  footer {
+    .h(200px);
+  }
+  main .column {
+    margin-right: 2%;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  main {
+    order: -1;
+    .column {
+      margin-right: 0;
+    }
+  }
+}

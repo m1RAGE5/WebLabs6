@@ -1,0 +1,85 @@
+.red {
+  color: red;
+}
+body {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  margin: 0;
+}
+header,
+main,
+footer {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 20px;
+}
+header {
+  background-color: #2d5e8b;
+  color: #ffffff;
+  min-width: 200px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  margin-right: 20px;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+main {
+  min-width: 600px;
+}
+main .column {
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+  margin-right: 1%;
+}
+main .column.news h2 {
+  color: red;
+}
+main .column.faculties {
+  height: 200px;
+}
+main .column.contacts {
+  height: 200px;
+}
+footer {
+  background-color: #2d5e8b;
+  color: #ffffff;
+  min-width: 200px;
+  text-align: center;
+}
+@media (max-width: 799px) {
+  header,
+  main {
+    height: calc(100% - 200px);
+  }
+  footer {
+    height: 200px;
+  }
+  main .column {
+    margin-right: 2%;
+  }
+  main .column:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 599px) {
+  main {
+    order: -1;
+  }
+  main .column {
+    margin-right: 0;
+  }
+}

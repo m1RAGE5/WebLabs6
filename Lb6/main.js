@@ -21,20 +21,10 @@
     }
 
     // форма
-    function findDoubleChars(str) {
-        let matches = [];
-        for (let i = 0; i < str.length - 1; i++) {
-            if (str[i] === str[i + 1]) {
-                matches.push(str[i] + str[i + 1] + ' (позиції ' + i + '-' + (i + 1) + ')');
-            }
-        }
-        return matches.length > 0 ? matches.join(', ') : 'Немає двох однакових поспіль символів';
-    }
-
     function showForm() {
         document.getElementById('contact-form').style.display = 'block';
     }
-
+    
     function validateForm() {
         let isValid = true;
         const get = id => document.getElementById(id).value.trim();

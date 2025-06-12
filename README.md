@@ -11,3 +11,7 @@
 **Code: [Lb3](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb3)**\
 **See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb3/)**
 ![brave_ws2bXNrI6X](https://github.com/user-attachments/assets/1f95fc90-afb3-45c2-9c81-ddc0494da3db)
+## Lab 4 > Bootstrap
+**Code: [Lb4](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb4)**\
+**See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb4/)**
+![brave_m8L53auLdr](https://github.com/user-attachments/assets/9743daeb-906b-4037-a139-404e4bef0e72)

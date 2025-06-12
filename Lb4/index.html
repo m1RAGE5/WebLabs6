@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <title>Національний Університет</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .bg-1 { 
+      background-color: #2d5e8b; 
+      color: #ffffff; 
+      padding: 50px 0;
+    }
+    .bg-2 { 
+      background-color: #f0f0f0; 
+      padding: 30px 0;
+    }
+    .bg-3 { 
+      background-color: #ffffff; 
+      padding: 30px 0;
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: auto;
+    }
+    .navbar {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+        <a class="navbar-brand" href="#">Національний Університет</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Головна</a></li>
+          <li><a href="#">Факультети</a></li>
+          <li><a href="#">Новини</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="universityCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#universityCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#universityCarousel" data-slide-to="1"></li>
+      <li data-target="#universityCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://placehold.co/800x280/1c4164/white?text=Кампус" alt="Кампус">
+        <div class="carousel-caption">
+          <h3>Наш кампус</h3>
+          <p>Сучасні аудиторії та бібліотеки</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://placehold.co/800x280/1c4164/white?text=Студенти" alt="Студенти">
+        <div class="carousel-caption">
+          <h3>Студентське життя</h3>
+          <p>Активна спільнота студентів</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://placehold.co/800x280/1c4164/white?text=Наука" alt="Наука">
+        <div class="carousel-caption">
+          <h3>Наукові дослідження</h3>
+          <p>Інновації та відкриття</p>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#universityCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#universityCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+
+  <div class="container-fluid bg-1 text-center">
+    <h3>Про університет</h3>
+    <p>Національний Університет — провідний навчальний заклад України, заснований у 1800 році.</p>
+    <a href="#" class="btn btn-primary btn-lg" data-toggle="tooltip" title="Дізнайтесь більше про нас">
+      <span class="glyphicon glyphicon-info-sign"></span> Дізнатись більше
+    </a>
+  </div>
+
+  <div class="container-fluid bg-2 text-center">
+    <h3>Наші можливості</h3>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4>Новини</h4>
+        <p>Набір студентів на 2025/2026 навч. рік відкрито!</p>
+        <img src="https://placehold.co/600x400/white/2d5e8b/?text=Новини" class="img-responsive" style="width:100%" alt="Новини">
+      </div>
+      <div class="col-sm-4">
+        <h4>Факультети</h4>
+        <p>Інформатика, Економіка, Філологія, Право та ін.</p>
+        <img src="https://placehold.co/600x400/white/2d5e8b/?text=Факультети" class="img-responsive" style="width:100%" alt="Факультети">
+      </div>
+      <div class="col-sm-4">
+        <h4>Контакти</h4>
+        <p>info@university.edu.ua, телф. +380 (44) 123 4567</p>
+        <img src="https://placehold.co/600x400/white/2d5e8b/?text=Контакти" class="img-responsive" style="width:100%" alt="Контакти">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-3 text-center">
+    <h3>Зв'яжіться з нами</h3>
+    <p>Дізнайтесь більше про вступ або зв'яжіться з нами!</p>
+    <a href="#" class="btn btn-default btn-lg" data-toggle="tooltip" title="Надіслати запит">
+      <span class="glyphicon glyphicon-envelope"></span> Надіслати запит
+    </a>
+  </div>
+
+  <footer class="container-fluid bg-1 text-center">
+    <p>Національний Університет, 2025. Усі права захищено.</p>
+    <p>Адреса: вул. Академічна, 1, Київ, Україна</p>
+  </footer>
+
+  <script>
+    $(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+    });
+  </script>
+</body>
+</html>

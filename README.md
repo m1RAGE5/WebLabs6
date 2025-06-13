@@ -26,4 +26,5 @@
 ## Lab 7 > JS DOM
 **Code: [Lb7](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb7)**\
 **See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb7/)**
+
 ![image](https://github.com/user-attachments/assets/749f3b71-ec1a-4db7-95c5-ed3bb0706872)

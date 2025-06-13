@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <title>Lb8 JS DOM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .bg-1 { 
+      background-color: #2d5e8b; 
+      color: #ffffff; 
+      padding: 50px 0;
+    }
+    .bg-2 { 
+      background-color: #f0f0f0; 
+      padding: 30px 0;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    #calculator-form, #bulls-cows-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid bg-1 text-center">
+    <h3>Калькулятор</h3>
+    <form id="calculator-form" class="container">
+      <div class="form-group">
+        <label for="num1">Число 1:</label>
+        <input type="number" class="form-control" id="num1" placeholder="Введіть перше число">
+        <span class="error" id="num1Error"></span>
+      </div>
+      <div class="form-group">
+        <label for="operation">Операція:</label>
+        <select class="form-control" id="operation">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">×</option>
+          <option value="divide">÷</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="num2">Число 2:</label>
+        <input type="number" class="form-control" id="num2" placeholder="Введіть друге число">
+        <span class="error" id="num2Error"></span>
+      </div>
+      <div class="form-group">
+        <label for="calcResult">Результат:</label>
+        <input type="text" class="form-control" id="calcResult" readonly>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="compute()">Розрахувати</button>
+    </form>
+  </div>
+
+  <div class="container-fluid bg-2 text-center">
+    <h3>Гра «Бики та корови»</h3>
+    <p>Вгадайте чотиризначне число з різними цифрами!</p>
+    <form id="bulls-cows-form" class="container">
+      <div class="form-group">
+        <label for="guess">Ваш варіант:</label>
+        <input type="text" class="form-control" id="guess" maxlength="4" placeholder="Введіть 4 цифри">
+        <span class="error" id="guessError"></span>
+      </div>
+      <div class="form-group">
+        <label>Результати:</label>
+        <div id="gameResults"></div>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="checkGuess()">Перевірити</button>
+      <button type="button" class="btn btn-default" onclick="resetGame()">Нова гра</button>
+    </form>
+  </div>
+
+  <script language="JavaScript">
+    // калькулятор
+    function compute() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const operation = document.getElementById('operation').value;
+      let result = 0;
+      let error = false;
+
+      document.getElementById('num1Error').innerText = '';
+      document.getElementById('num2Error').innerText = '';
+
+      if (isNaN(num1)) {
+        document.getElementById('num1Error').innerText = 'Введіть коректне число';
+        error = true;
+      }
+      if (isNaN(num2)) {
+        document.getElementById('num2Error').innerText = 'Введіть коректне число';
+        error = true;
+      }
+      if (operation === 'divide' && num2 === 0) {
+        document.getElementById('num2Error').innerText = 'Ділення на нуль неможливе';
+        error = true;
+      }
+
+      if (!error) {
+        switch (operation) {
+          case 'add':
+            result = num1 + num2;
+            break;
+          case 'subtract':
+            result = num1 - num2;
+            break;
+          case 'multiply':
+            result = num1 * num2;
+            break;
+          case 'divide':
+            result = num1 / num2;
+            break;
+        }
+        document.getElementById('calcResult').value = result.toFixed(2);
+      } else {
+        document.getElementById('calcResult').value = '';
+      }
+    }
+
+    // бики та корови
+    let secretNumber = generateSecretNumber();
+
+    function generateSecretNumber() {
+      let digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      digits = digits.sort(() => Math.random() - 0.5);
+      while (digits[0] === 0) {
+        digits = digits.sort(() => Math.random() - 0.5);
+      }
+      return digits.slice(0, 4).join('');
+    }
+
+    function checkGuess() {
+      const guess = document.getElementById('guess').value;
+      const errorElement = document.getElementById('guessError');
+      const resultsElement = document.getElementById('gameResults');
+
+      errorElement.innerText = '';
+
+      if (!/^\d{4}$/.test(guess)) {
+        errorElement.innerText = 'Введіть 4 цифри';
+        return;
+      }
+      const uniqueDigits = new Set(guess.split(''));
+      if (uniqueDigits.size !== 4) {
+        errorElement.innerText = 'Усі цифри повинні бути різними';
+        return;
+      }
+
+      let bulls = 0;
+      let cows = 0;
+      for (let i = 0; i < 4; i++) {
+        if (guess[i] === secretNumber[i]) {
+          bulls++;
+        } else if (secretNumber.includes(guess[i])) {
+          cows++;
+        }
+      }
+
+      const result = document.createElement('p');
+      result.innerText = `Спроба: ${guess} — ${bulls} бик(ів), ${cows} корова(и)`;
+      resultsElement.prepend(result);
+
+      if (bulls === 4) {
+        result.innerText += ' Ви перемогли!';
+        document.getElementById('guess').disabled = true;
+      }
+    }
+
+    function resetGame() {
+      secretNumber = generateSecretNumber();
+      document.getElementById('guess').value = '';
+      document.getElementById('guess').disabled = false;
+      document.getElementById('guessError').innerText = '';
+      document.getElementById('gameResults').innerHTML = '';
+    }
+  </script>
+</body>
+</html>

@@ -15,8 +15,11 @@
 **Code: [Lb4](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb4)**\
 **See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb4/)**
 ![brave_m8L53auLdr](https://github.com/user-attachments/assets/9743daeb-906b-4037-a139-404e4bef0e72)
-## Lab 6 > JS Basis
-**Code: [Lb6](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb6)**\
+## Lab 5 > CMS (WordPress)
+**Code: [Lb5](https://github.com/m1RAGE5/WebLabs6/tree/master/WordPress)**\
 **See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb6/)**
 ![image](https://github.com/user-attachments/assets/9b2e4d39-f752-43ce-aef8-eca9f7ebfa67)
-
+## Lab 6 > JS Basis
+**Code: [Lb6](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb6)**\
+**See here: [Preview]([https://m1rage5.github.io/WebLabs6/Lb6/](https://humorous-marten-a8e819.instawp.xyz/))**
+![image](https://github.com/user-attachments/assets/a7398a4e-baf7-4812-9357-96a466e09b6d)

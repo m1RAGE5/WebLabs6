@@ -18,4 +18,5 @@
 ## Lab 6 > JS Basis
 **Code: [Lb6](https://github.com/m1RAGE5/WebLabs6/tree/master/Lb6)**\
 **See here: [Preview](https://m1rage5.github.io/WebLabs6/Lb6/)**
-![image](https://github.com/user-attachments/assets/e136c8c6-439e-42db-a0ee-2b6be6568d4f)
+![image](https://github.com/user-attachments/assets/9b2e4d39-f752-43ce-aef8-eca9f7ebfa67)
+
